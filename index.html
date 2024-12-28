@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Aditya Koul Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* General Styling */
+      body {
+        font-family: 'Arial', sans-serif;
+        background: #e6e4df;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Allow horizontal scroll */
+        height: 100%; /* Ensure the body takes full height for scrolling */
+      }
+
+      #nav {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        text-align: center;
+        padding: 0.8rem 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      #nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      #nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      #nav ul li a:hover {
+        color: #4caf50;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 3rem auto;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background: #f7f5f2;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      a {
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #1e7e34;
+      }
+
+      .projects-list,
+      .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .projects-list li,
+      .skills-list li {
+        background: #ffffff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .projects-list li:hover,
+      .skills-list li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Companion Styling */
+      .companion {
+        position: fixed;
+        width: 80px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+      }
+
+      .companion img {
+        width: 100%;
+        border-radius: 50%;
+      }
+
+      .speech-bubble {
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translateX(-50%);
+        width: 120px;
+        padding: 8px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      .speech-bubble:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+      }
+
+      .companion:hover {
+        cursor: pointer;
+      }
+
+      footer {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #4caf50;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </nav>
+
+    <!-- Companion -->
+    <div class="companion" id="companion">
+      <img src="bojack_1-removebg-preview.png" alt="Companion" id="bojack-img" />
+      <div class="speech-bubble" id="speech-bubble">Welcome to my portfolio!</div>
+    </div>
+
+    <!-- Sections -->
+    <section id="home">
+      <h1><i class="fas fa-home"></i> Aditya Koul</h1>
+      <p>Data Scientist | AI Enthusiast</p>
+      <p>
+        <a href="https://github.com/Aditya-k07" target="_blank"><i class="fab fa-github icon"></i>GitHub</a> |
+        <a href="http://www.linkedin.com/in/aditya-koul-2b17b3263" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <ul class="projects-list">
+        <li><a href="https://github.com/Aditya-k07/ImgclassifierCNN" target="_blank"><i class="fas fa-code"></i> CIFAR-10 Image Classifier</a></li>
+        <li><a href="https://github.com/Aditya-k07/employee_attritionXgB" target="_blank"><i class="fas fa-chart-line"></i> Employee Attrition Analysis</a></li>
+        <li><a href="https://github.com/Aditya-k07/lookalike-celeb-differentiator-YOLO" target="_blank"><i class="fas fa-users"></i> Celebrity Differentiator</a></li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fas fa-check"></i> Python</li>
+        <li><i class="fas fa-check"></i> C++</li>
+        <li><i class="fas fa-check"></i> TensorFlow</li>
+        <li><i class="fas fa-check"></i> YOLO</li>
+        <li><i class="fas fa-check"></i> PyTorch</li>
+        <li><i class="fas fa-check"></i> DSA</li>
+        <li><i class="fas fa-check"></i> Data Annotation</li>
+        <li><i class="fas fa-check"></i> EDA</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <p>B.E. in Computer Engineering</p>
+      <p>Bharati Vidyapeeth College of Engineering, Pune</p>
+    </section>
+
+    <section id="resume">
+      <h2><i class="fas fa-file-alt"></i> Resume</h2>
+      <p>
+        <a href="Aditya_resume.pdf" target="_blank"><i class="fas fa-download"></i> Download My Resume</a>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2024 Aditya Koul . All rights reserved. |
+        <a href="https://github.com/Aditya-k07" target="_blank">GitHub</a> |
+        <a href="http://www.linkedin.com/in/aditya-koul-2b17b3263" target="_blank">LinkedIn</a>
+      </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      const companionContainer = document.getElementById('companion');
+      const bojackImg = document.getElementById('bojack-img');
+      const speechBubble = document.getElementById('speech-bubble');
+
+      let bojackCount = 1; // Starting with one Bojack
+      let touchCount = 0;
+      let bojackInstances = [companionContainer];
+
+      // Predefined messages
+      const messages = [
+        "Is this what you were looking for?",
+        "I love coding, it’s fun!",
+        "I’m a fan of data science.",
+        "Let’s build something cool together!",
+        "Data, code, and coffee—what else?",
+        "Thanks for visiting! I hope you find my work interesting.",
+        "Grateful for your time, feel free to check out my projects!",
+        "It’s always a pleasure to have you here!",
+        "I appreciate you taking the time to explore my portfolio.",
+        "I’ve worked with Computer Vision in real-world applications!",
+        "I love solving complex problems with DSA.",
+        "Data Annotation has been a big part of my project work.",
+        "I’ve created machine learning models to predict employee attrition.",
+        "Check out my CIFAR-10 Image Classifier project on GitHub.",
+        "I enjoy working with YOLO for object detection tasks.",
+        "I’m passionate about using AI to drive decisions in industries like healthcare, education, and urban planning.",
+        "I have contributed to open-source projects, improving code quality and functionality.",
+        "I have a strong foundation in both theoretical and applied machine learning.",
+        "My projects focus on practical solutions to real-world problems using data science and AI.",
+        "In my previous role, I helped optimize business processes with data-driven insights."
+      ];
+
+      // Initial Bojack position near the right-middle end near the scroll button
+      const moveBojackToOrigin = () => {
+        companionContainer.style.left = `${window.innerWidth - 150}px`; // Position Bojack near the right edge with extra margin to make text visible
+        companionContainer.style.top = `${window.innerHeight / 2 - 50}px`;  // Position Bojack half the screen above
+        bojackImg.style.transform = 'scaleX(1)'; // Ensure Bojack is facing the right direction
+      };
+
+      // Move Bojack randomly within the visible area
+      const moveBojackRandomly = (bojack) => {
+        const maxX = window.innerWidth - 100; // Stay within screen width
+        const maxY = window.innerHeight - 100; // Stay within screen height
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        bojack.style.left = `${randomX}px`;
+        bojack.style.top = `${randomY}px`;
+
+        // Invert image if Bojack is on the left half of the screen
+        if (randomX < window.innerWidth / 2) {
+          bojackImg.style.transform = 'scaleX(-1)';
+        } else {
+          bojackImg.style.transform = 'scaleX(1)';
+        }
+      };
+
+      // Set random message on hover
+      const setRandomMessage = () => {
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        speechBubble.textContent = randomMessage;
+      };
+
+      // Event for touch detection
+      companionContainer.addEventListener('mouseover', () => {
+        touchCount++;
+        setRandomMessage(); // Set a random message when touched
+
+        if (touchCount >= 7) {
+          // Double the Bojacks after 7 touches (1, 2, 4, 8, 16...)
+          if (bojackInstances.length < bojackCount * 2) {
+            const newBojack = companionContainer.cloneNode(true);
+            document.body.appendChild(newBojack);
+            bojackInstances.push(newBojack);
+          }
+          touchCount = 0; // Reset touch count
+          bojackCount *= 2; // Double the Bojack count
+        }
+
+        // Move each Bojack randomly
+        bojackInstances.forEach(moveBojackRandomly);
+      });
+
+      // Reset Bojack position when page is scrolled
+      window.addEventListener('scroll', () => {
+        bojackInstances.forEach(moveBojackToOrigin);
+      });
+
+      // Initial setup
+      moveBojackToOrigin();
+    </script>
+  </body>
+</html>
