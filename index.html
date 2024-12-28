@@ -9,7 +9,8 @@
       /* General Styling */
       body {
         font-family: 'Arial', sans-serif;
-        background: #e6e4df;
+        background: linear-gradient(135deg, #e6e4df 25%, #f7f5f2 25%, #f7f5f2 50%, #e6e4df 50%, #e6e4df 75%, #f7f5f2 75%, #f7f5f2 100%);
+        background-size: 200% 200%;
         color: #333;
         margin: 0;
         padding: 0;
@@ -78,7 +79,8 @@
       }
 
       .projects-list,
-      .skills-list {
+      .skills-list,
+      .certifications-list {
         list-style: none;
         padding: 0;
         margin: 2rem 0;
@@ -88,16 +90,21 @@
       }
 
       .projects-list li,
-      .skills-list li {
+      .skills-list li,
+      .certifications-list li {
         background: #ffffff;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .projects-list li:hover,
-      .skills-list li:hover {
+      .skills-list li:hover,
+      .certifications-list li:hover {
         transform: translateY(-5px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
@@ -169,6 +176,7 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#resume">Resume</a></li>
@@ -200,6 +208,16 @@
       </ul>
     </section>
 
+    <section id="certifications">
+      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <ul class="certifications-list">
+        <li><i class="fas fa-award"></i> <a href="https://drive.google.com/file/d/1v1SYGG2tYjzUP_5sHh0SSgR2K9I6rp5N/view?usp=drive_link" target="_blank">Regression and Classification</a></li>
+        <li><i class="fas fa-award"></i> <a href="https://drive.google.com/file/d/1Uv3P8_CvPgX6bdHHkycesfpF6eAnfn4t/view?usp=sharing" target="_blank">Advanced Algorithms</a></li>
+        <li><i class="fas fa-award"></i> <a href="https://drive.google.com/file/d/1M95gJO22pPiyQayDGlKu-Z2YTwn07U3Z/view?usp=sharing" target="_blank">Introduction to OS</a></li>
+        <li><i class="fas fa-award"></i> <a href="https://drive.google.com/file/d/1AROTdEA7D7K42KVDek_s19HM-dK7AlQj/view?usp=sharing" target="_blank">Agile Certification</a></li>
+      </ul>
+    </section>
+
     <section id="skills">
       <h2><i class="fas fa-tools"></i> Skills</h2>
       <ul class="skills-list">
@@ -207,7 +225,7 @@
         <li><i class="fas fa-check"></i> C++</li>
         <li><i class="fas fa-check"></i> TensorFlow</li>
         <li><i class="fas fa-check"></i> YOLO</li>
-        <li><i class="fas fa-check"></i> PyTorch</li>
+        <li><i class=" fas fa-check"></i> PyTorch</li>
         <li><i class="fas fa-check"></i> DSA</li>
         <li><i class="fas fa-check"></i> Data Annotation</li>
         <li><i class="fas fa-check"></i> EDA</li>
@@ -223,14 +241,14 @@
     <section id="resume">
       <h2><i class="fas fa-file-alt"></i> Resume</h2>
       <p>
-        <a href="Aditya_resume.pdf" target="_blank"><i class="fas fa-download"></i> Download My Resume</a>
+        <a href="https://drive.google.com/file/d/1Gn9kvtp0uicYk4tDKIE1DM8pDQ9XQgg2/view?usp=sharing" target="_blank"><i class="fas fa-download"></i> Download My Resume</a>
       </p>
     </section>
 
     <!-- Footer -->
     <footer>
       <p>
-        &copy; 2024 Aditya Koul . All rights reserved. |
+        &copy; 2024 Aditya Koul. All rights reserved. |
         <a href="https://github.com/Aditya-k07" target="_blank">GitHub</a> |
         <a href="http://www.linkedin.com/in/aditya-koul-2b17b3263" target="_blank">LinkedIn</a>
       </p>
@@ -252,19 +270,17 @@
         "I love coding, it’s fun!",
         "I’m a fan of data science.",
         "Let’s build something cool together!",
-        "Data, code, and coffee—what else?",
+        "Data, code, and chai—what else?",
         "Thanks for visiting! I hope you find my work interesting.",
         "Grateful for your time, feel free to check out my projects!",
         "It’s always a pleasure to have you here!",
         "I appreciate you taking the time to explore my portfolio.",
         "I’ve worked with Computer Vision in real-world applications!",
         "I love solving complex problems with DSA.",
-        "Data Annotation has been a big part of my project work.",
         "I’ve created machine learning models to predict employee attrition.",
         "Check out my CIFAR-10 Image Classifier project on GitHub.",
         "I enjoy working with YOLO for object detection tasks.",
         "I’m passionate about using AI to drive decisions in industries like healthcare, education, and urban planning.",
-        "I have contributed to open-source projects, improving code quality and functionality.",
         "I have a strong foundation in both theoretical and applied machine learning.",
         "My projects focus on practical solutions to real-world problems using data science and AI.",
         "In my previous role, I helped optimize business processes with data-driven insights."
@@ -301,6 +317,15 @@
         speechBubble.textContent = randomMessage;
       };
 
+      // Change message for all Bojacks every 7 seconds
+      const changeMessagesForAllBojacks = () => {
+        bojackInstances.forEach(bojack => {
+          const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+          const speechBubble = bojack.querySelector('.speech-bubble');
+          speechBubble.textContent = randomMessage;
+        });
+      };
+
       // Event for touch detection
       companionContainer.addEventListener('mouseover', () => {
         touchCount++;
@@ -328,6 +353,9 @@
 
       // Initial setup
       moveBojackToOrigin();
+
+      // Set interval to change messages every 7 seconds
+      setInterval(changeMessagesForAllBojacks, 3200);
     </script>
   </body>
 </html>
